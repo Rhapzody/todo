@@ -8,19 +8,24 @@ class AddTaskPage extends Component {
         return (
             <Page renderToolbar={() => (
                 <Toolbar className="bar">
+
                     <div className="left">
                         <button onClick={this.popPage} className="text-white plus-button">
                             <Icon icon="md-arrow-back" size={{default:30}} />
                         </button>
                     </div>
+
                     <div className="center text-white" style={{textAlign:"center"}}>
                         Add TODO List
                     </div>
-                    <div className="right">
-                    </div>
+
+                    <div className="right"></div>
+
                 </Toolbar>
             )}>
-                <Form/>
+
+                <Form type="add"/>
+                
             </Page>
         )
     }

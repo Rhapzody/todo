@@ -60,6 +60,7 @@ code {
 
 .task-border {
   border-bottom: 1px solid black !important;
+  background-color: white;
 }
 
 .add-button {
@@ -69,7 +70,7 @@ code {
   text-align: center;
 }
 
-input[type=date], textarea, input[type=text] {
+input[type=datetime-local], textarea, input[type=text] {
   border: 1px solid #3E3880;
   border-radius: 5px;
   padding: 3px;

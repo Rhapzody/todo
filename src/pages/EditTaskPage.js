@@ -1,16 +1,9 @@
 import React, { Component } from 'react'
-import {Toolbar, Page, Icon} from 'react-onsenui';
 import { withRouter } from 'react-router-dom';
-import DoneLists from '../components/DoneList/DoneLists'
-import {connect} from 'react-redux';
-import {fetchAllTasks} from "../actions";
+import Form from '../components/Form'
+import {Toolbar, Page, Icon} from 'react-onsenui';
 
-class DoneTaskPage extends Component {
-
-    componentDidMount(){
-        this.props.fetchAllTasks();
-    }
-
+class EditTaskPage extends Component {
     render() {
         return (
             <Page renderToolbar={() => (
@@ -23,16 +16,16 @@ class DoneTaskPage extends Component {
                     </div>
 
                     <div className="center text-white" style={{textAlign:"center"}}>
-                        Done Task Lists
+                        Edit TODO List
                     </div>
 
                     <div className="right"></div>
-                    
+
                 </Toolbar>
             )}>
 
-                <DoneLists/>
-
+                <Form type="edit"/>
+                
             </Page>
         )
     }
@@ -42,10 +35,4 @@ class DoneTaskPage extends Component {
     }
 }
 
-function mapStateToProps(){
-    return {}
-}
-
-export default withRouter(connect(mapStateToProps, {
-    fetchAllTasks
-})(DoneTaskPage));
+export default withRouter(EditTaskPage);

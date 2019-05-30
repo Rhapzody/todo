@@ -7,19 +7,30 @@ import * as ons from 'onsenui';
 
 const Toolbar = (props) => (
     <Bar style={{backgroundColor:"#6759FF", color:"white"}}>
+
         <div className="left">
-            <button onClick={()=>openAddToDoPage(props)} className="plus-button">
+            <button 
+                onClick={()=>openAddToDoPage(props)}
+                className="plus-button">
                 <Icon icon="md-plus" size={{default:30}} />
             </button>
         </div>
-        <div className="center" style={{textAlign:"center", color:"white"}} >
+
+        <div 
+            className="center"
+            style={{textAlign:"center", color:"white"}} >
             Reminders
         </div>
+
         <div className="right">
-            <button modifier="ligth quiet" onClick={()=>doneTaskHandler(props)} className="done-button">
+            <button 
+                modifier="ligth quiet"
+                onClick={()=>doneTaskHandler(props)}
+                className="done-button">
                 Done
             </button>
         </div>
+        
     </Bar>
 )
    

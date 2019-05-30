@@ -1,8 +1,9 @@
 import * as type from './type';
 
 export const fetchAllTasks = () => {
-    let payload = JSON.parse(localStorage.getItem("todo-list"));
-    return {type: type.LOAD_ALL_TASKS, payload};
+    console.log('load all');
+    
+    return {type: type.LOAD_ALL_TASKS};
 }
 
 export const addTask = (todo) => {

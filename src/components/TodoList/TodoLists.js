@@ -3,7 +3,6 @@ import { List } from 'react-onsenui';
 import TodoListHeader from './TodoListHeader';
 import Task from './Task';
 import { connect } from 'react-redux';
-import { addTask } from "../../actions";
 
 const TodoLists = (props) => (
     <List 
@@ -15,17 +14,15 @@ const TodoLists = (props) => (
             }
         }}
         className="page-bg"
-        style={{
-            minHeight:"100%"
-        }}
+        style={{minHeight:"100%"}}
     />
 )
 
 
 function mapStateToProps({tasks}) {
-    return {tasks}
+    let sortrdTasks = [...tasks];
+    sortrdTasks.sort((a,b)=>(a.date>b.date)?1:-1);
+    return {tasks:sortrdTasks}
 }
 
-export default connect(mapStateToProps, {
-    addTask
-})(TodoLists);
+export default connect(mapStateToProps, {})(TodoLists);

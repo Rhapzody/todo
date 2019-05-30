@@ -12,14 +12,14 @@ class Home extends Component {
     }
 
     render() {
-        console.log('Home');
-        
         return (
-            <Page renderToolbar={() => <Toolbar/> }
+            <Page 
+                renderToolbar={() => <Toolbar/> }
                 modifier="transparent"
-                className="page-bg"
-            >
+                className="page-bg">
+
                 <TodoLists/>
+                
             </Page>
         )
     }
