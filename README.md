@@ -1,6 +1,6 @@
 ## Scripts for Testing
 
-### `cd project-directory`
+### `cd <project-directory>`
 ### `npm install`
 ### `npm start`
 
