@@ -98,6 +98,7 @@ class Form extends Component {
                 <Button
                     className="add-button"
                     onClick={this.submitForm}
+                    style={{margin:"auto", width:"50%", display:'block'}}
                 >
                     {this.props.type === 'add'?'Add':'Edit'}
                 </Button>

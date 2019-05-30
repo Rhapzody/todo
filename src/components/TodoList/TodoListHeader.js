@@ -14,6 +14,7 @@ const TodoListHeader = (props) => {
             <ListItem 
                 modifier="chevron"
                 tappable
+                className="list-header-item"
                 onClick={()=>props.history.push('/done')}>
 
                 <div className="left text-white">

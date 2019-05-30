@@ -51,7 +51,12 @@ code {
 
 .list-header {
   background-color: #2D0C80;
+  border-bottom: 0px solid #2D0C80 !important;
   color: white;
+}
+
+.list-header-item {
+  border-bottom: 0px solid #2D0C80 !important;
 }
 
 .page-bg {
