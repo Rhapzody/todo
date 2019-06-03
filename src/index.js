@@ -8,9 +8,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 //Redux
-import {Provider} from "react-redux";
-import {createStore} from "redux";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 import reducers from "./reducers";
+import middlewares from './middlewares';
 
 //Check Local Storage
 if (!localStorage.getItem('todo-list')) {
@@ -21,7 +22,7 @@ if (!localStorage.getItem('todo-list')) {
 ons.platform.select('ios');
 
 //Create Redux Store
-const store = createStore(reducers, {});
+const store = createStore(reducers, middlewares);
 
 ReactDOM.render(
     <Provider store={store}>

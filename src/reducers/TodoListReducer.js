@@ -1,34 +1,14 @@
 import * as type from '../actions/type';
-import * as ons from "onsenui";
 
 export default function(state = [], action) {
     switch (action.type) {
         //load all task
         case type.LOAD_ALL_TASKS:
-            let payload;
-            try {
-                payload = JSON.parse(localStorage.getItem("todo-list"));
-            } catch (error) {
-                ons.notification.alert('Load data fail.\nReset data.')
-                localStorage.setItem('todo-list', JSON.stringify([]));
-                payload = [];
-            }
-            return [...payload];
+            return [...action.payload];
 
         //add new task
         case type.ADD_NEW_TASK:
-            let newTodo = action.todo;
-            if (state.length !== 0) {
-                newTodo.id = parseInt(state[state.length - 1].id) + 1;
-            } else {
-                newTodo.id = 1;
-            }
-            let newState = [
-                ...state,
-                newTodo
-            ];
-            localStorage.setItem('todo-list', JSON.stringify(newState));
-            return newState;
+            return [...action.payload];
 
         //mask task
         case type.CHECK_TASK:

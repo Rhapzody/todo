@@ -1,13 +1,20 @@
 import * as type from './type';
+import todoService from '../services/todo-service';
 
 export const fetchAllTasks = () => {
-    console.log('load all');
-    
-    return {type: type.LOAD_ALL_TASKS};
+    return (dispatch)=>{
+        todoService.getTodos().then(tasks=>{
+            dispatch({type: type.LOAD_ALL_TASKS, payload:tasks});
+        })
+    }
 }
 
 export const addTask = (todo) => {
-    return {type: type.ADD_NEW_TASK, todo};
+    return (dispatch, getState) => {
+        const { tasks: currentState } = getState();
+        const newState = todoService.addTodo(todo, currentState);
+        dispatch({type: type.ADD_NEW_TASK, payload: newState});
+    }
 }
 
 export const deleteTask = (todo) => {
