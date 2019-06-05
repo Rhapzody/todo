@@ -5,13 +5,13 @@ const todo = {
             let tasks;
             try {
                 tasks = JSON.parse(localStorage.getItem("todo-list"));
+                resolve(tasks);
             } catch (error) {
                 ons.notification.alert('Load data fail.\nReset data.')
                 localStorage.setItem('todo-list', JSON.stringify([]));
-                tasks = [];
                 reject(error);
             }
-            resolve(tasks);
+            
         })
     },
 

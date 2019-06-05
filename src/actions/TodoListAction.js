@@ -5,6 +5,9 @@ export const fetchAllTasks = () => {
     return (dispatch)=>{
         todoService.getTodos().then(tasks=>{
             dispatch({type: type.LOAD_ALL_TASKS, payload:tasks});
+        }).catch((err)=>{
+            console.log(err);
+            dispatch({type: type.LOAD_ALL_TASKS, payload:[]});
         })
     }
 }
